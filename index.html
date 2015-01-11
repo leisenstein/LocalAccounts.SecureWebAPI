@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Products App</title>
+</head>
+<body>
+    <div>
+        <h2>All Products</h2>
+        <ul id="products"></ul>
+    </div>
+
+
+    <div>
+        <h2>Search By ID:</h2>
+        <input type="text" id="productId" size="5" />
+        <input type="button" value="Search" onclick="find();"/>
+        <p id="product"></p>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script>
+        var loginData = {
+            grant_type: 'password',
+            username: 'alice@example.com',
+            password: 'Password1!'
+        };
+
+
+        var tokenKey = 'localAccountsv2_Auth';
+        var token = sessionStorage.getItem(tokenKey);
+        var headers = {};
+        if (token) {
+            headers.Authorization = 'Bearer ' + token;
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: '/Token',
+                data: loginData
+            }).done(function (data) {
+                // self.user(data.userName);
+                // Cache the access token in session storage.
+                sessionStorage.setItem(tokenKey, data.access_token);
+                $('#product').text('Good Token: ' + data.access_token);
+                token = sessionStorage.getItem(tokenKey);
+                headers.Authorization = 'Bearer ' + token;
+
+            }).fail(function (jqXHR, textStatus, err) {
+                $('#product').text('Error Token: ' + err);
+            });
+        }
+
+
+
+        var uri = 'api/products';
+        $(document).ready(function () {
+
+            // $.ajax({});
+            $.ajax({
+                url: uri,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    alert('success!');
+                    $.each(data, function (key, item) {
+                        $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                    });
+                },
+                error: function () { alert('ERROR!'); },
+                beforeSend: setHeader
+
+            });
+            function setHeader(xhr) {
+                xhr.setRequestHeader('Authorization', headers.Authorization);
+            }
+
+
+        }); // end document ready
+
+        function formatItem(item) { 
+            return item.Name + ': $' + item.Price;
+        }
+
+        function find() {
+            var id = $('#productId').val();
+
+            $.getJSON(uri + '/' + id)
+            .done(function (data) {
+                $('#product').text(formatItem(data));
+            })
+            .fail(function (jqXHR, textStatus, err) {
+                $('#product').text('Error: ' + err);
+            });
+        }
+
+
+    </script>
+</body>
+</html>
