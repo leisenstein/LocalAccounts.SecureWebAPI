@@ -58,24 +58,20 @@
 
             // $.ajax({});
             $.ajax({
-                url: uri,
-                type: 'GET',
-                dataType: 'json',
-                success: function (data) {
-                    alert('success!');
-                    $.each(data, function (key, item) {
-                        $('<li>', { text: formatItem(item) }).appendTo($('#products'));
-                    });
-                },
-                error: function () { alert('ERROR!'); },
-                beforeSend: setHeader
-
+                  url: uri
+                , type: 'GET'
+                , dataType: 'json'
+                , headers: headers
+            })
+            .done(function(data) {
+                alert('success!');
+                $.each(data, function (key, item) {
+                    $('<li>', { text: formatItem(item) }).appendTo($('#products'));
+                });
+            })
+            .fail(function () {
+                alert('ERROR!');
             });
-            function setHeader(xhr) {
-                xhr.setRequestHeader('Authorization', headers.Authorization);
-            }
-
-
         }); // end document ready
 
         function formatItem(item) { 
