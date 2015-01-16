@@ -65,13 +65,14 @@
                 , headers: headers
             })
             .done(function(data) {
-                alert('success!');
+                // alert('success!');
                 $.each(data, function (key, item) {
                     $('<li>', { text: formatItem(item) }).appendTo($('#products'));
                 });
             })
             .fail(function () {
-                alert('ERROR!');
+                $('#product').text('Error: ' + 'Failed to retrieve data at ' + uri);
+                sessionStorage.removeItem(tokenKey);
             });
         }); // end document ready
 
