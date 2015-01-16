@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="prod_20141109" Class="SNAPDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(local);Initial Catalog=prod_20141109;Persist Security Info=True;User ID=webapiacct" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="prod_20141109ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SNAP_Address" Member="SNAP_Addresses">
+    <Type Name="SNAP_Address">
+      <Column Name="AddressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Purpose" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Attention" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(400) NOT NULL" CanBeNull="false" />
+      <Column Name="ApartmentOrSuite" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PartyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPreferred" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AutoStandardize" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SNAP_Party_SNAP_Address" Member="SNAP_Party" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_Party" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_EmailAddress" Member="SNAP_EmailAddresses">
+    <Type Name="SNAP_EmailAddress">
+      <Column Name="EmailAddressId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Purpose" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PartyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPreferred" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SNAP_Party_SNAP_EmailAddress" Member="SNAP_Party" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_Party" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_ExternalPartyMembership" Member="SNAP_ExternalPartyMemberships">
+    <Type Name="SNAP_ExternalPartyMembership">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ExternalId" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ExternalPartyMembershipTypeId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SNAP_ExternalPartyMembershipType_SNAP_ExternalPartyMembership" Member="SNAP_ExternalPartyMembershipType" ThisKey="ExternalPartyMembershipTypeId" OtherKey="ExternalPartyMembershipTypeId" Type="SNAP_ExternalPartyMembershipType" IsForeignKey="true" />
+      <Association Name="SNAP_Party_SNAP_ExternalPartyMembership" Member="SNAP_Party" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_Party" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_ExternalPartyMembershipType" Member="SNAP_ExternalPartyMembershipTypes">
+    <Type Name="SNAP_ExternalPartyMembershipType">
+      <Column Name="Issuer" Type="System.String" DbType="VarChar(448) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(448) NOT NULL" CanBeNull="false" />
+      <Column Name="Abbreviation" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Category" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="ExternalPartyMembershipTypeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Logo" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="MoreInfoUrl" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="SNAP_ExternalPartyMembershipType_SNAP_ExternalPartyMembership" Member="SNAP_ExternalPartyMemberships" ThisKey="ExternalPartyMembershipTypeId" OtherKey="ExternalPartyMembershipTypeId" Type="SNAP_ExternalPartyMembership" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_Party" Member="SNAP_Parties">
+    <Type Name="SNAP_Party">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="PartyTypeLabel" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SNAP_Party_SNAP_Address" Member="SNAP_Addresses" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_Address" />
+      <Association Name="SNAP_Party_SNAP_EmailAddress" Member="SNAP_EmailAddresses" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_EmailAddress" />
+      <Association Name="SNAP_Party_SNAP_ExternalPartyMembership" Member="SNAP_ExternalPartyMemberships" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_ExternalPartyMembership" />
+      <Association Name="SNAP_Party_SNAP_PhoneNumber" Member="SNAP_PhoneNumbers" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_PhoneNumber" />
+      <Association Name="SNAP_Party_SNAP_Profile" Member="SNAP_Profiles" ThisKey="PartyId" OtherKey="OwnerPartyId" Type="SNAP_Profile" />
+      <Association Name="SNAP_Party_SNAP_RegionsServed" Member="SNAP_RegionsServeds" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_RegionsServed" />
+      <Association Name="SNAP_Party_SNAP_Website" Member="SNAP_Websites" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_Website" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_PhoneNumber" Member="SNAP_PhoneNumbers">
+    <Type Name="SNAP_PhoneNumber">
+      <Column Name="PhoneNumberId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Purpose" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Extension" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="IsFax" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PartyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPreferred" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SNAP_Party_SNAP_PhoneNumber" Member="SNAP_Party" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_Party" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_Profile" Member="SNAP_Profiles">
+    <Type Name="SNAP_Profile">
+      <Column Name="ProfileTemplateLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="OwnerPartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SubjectLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ProfileId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="SNAP_Profile_SNAP_ProfileProperty" Member="SNAP_ProfileProperties" ThisKey="ProfileId" OtherKey="ProfileId" Type="SNAP_ProfileProperty" />
+      <Association Name="SNAP_Party_SNAP_Profile" Member="SNAP_Party" ThisKey="OwnerPartyId" OtherKey="PartyId" Type="SNAP_Party" IsForeignKey="true" />
+      <Association Name="SNAP_ProfileTemplate_SNAP_Profile" Member="SNAP_ProfileTemplate" ThisKey="ProfileTemplateLabel" OtherKey="ProfileTemplateLabel" Type="SNAP_ProfileTemplate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_ProfileProperty" Member="SNAP_ProfileProperties">
+    <Type Name="SNAP_ProfileProperty">
+      <Column Name="PropertyName" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PropertyValue" Type="System.String" DbType="NVarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="SNAP_Profile_SNAP_ProfileProperty" Member="SNAP_Profile" ThisKey="ProfileId" OtherKey="ProfileId" Type="SNAP_Profile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_ProfileTemplate" Member="SNAP_ProfileTemplates">
+    <Type Name="SNAP_ProfileTemplate">
+      <Column Name="ProfileTemplateLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Vocabulary" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SNAP_ProfileTemplate_SNAP_Profile" Member="SNAP_Profiles" ThisKey="ProfileTemplateLabel" OtherKey="ProfileTemplateLabel" Type="SNAP_Profile" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_RegionDefinition" Member="SNAP_RegionDefinitions">
+    <Type Name="SNAP_RegionDefinition">
+      <Column Name="RegionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RegionName" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="CountryCode" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="StateCode" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="North" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="South" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="East" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="West" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Shapes" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SNAP_RegionDefinition_SNAP_RegionsServed" Member="SNAP_RegionsServeds" ThisKey="RegionId" OtherKey="RegionId" Type="SNAP_RegionsServed" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_RegionsServed" Member="SNAP_RegionsServeds">
+    <Type Name="SNAP_RegionsServed">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SNAP_Party_SNAP_RegionsServed" Member="SNAP_Party" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_Party" IsForeignKey="true" />
+      <Association Name="SNAP_RegionDefinition_SNAP_RegionsServed" Member="SNAP_RegionDefinition" ThisKey="RegionId" OtherKey="RegionId" Type="SNAP_RegionDefinition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_Website" Member="SNAP_Websites">
+    <Type Name="SNAP_Website">
+      <Column Name="WebsiteId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Purpose" Type="System.String" DbType="NVarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="URL" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PartyId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsPreferred" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SNAP_Party_SNAP_Website" Member="SNAP_Party" ThisKey="PartyId" OtherKey="PartyId" Type="SNAP_Party" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SNAP_ServiceArea" Member="SNAP_ServiceAreas">
+    <Type Name="SNAP_ServiceArea">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PostalCode" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SNAP_GetPartyForProfile_UseDistanceRange" Method="SNAP_GetPartyForProfile_UseDistanceRange">
+    <Parameter Name="vcProfileType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="vcProfileTypeProperty" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="vcDemographics" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="intRange" Type="System.Int32" DbType="Int" />
+    <Parameter Name="vcPartyProviderName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="SNAP_GetPartyForProfile_UseDistanceRangeResult">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PartyName" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="PartyPhysicalAddress" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PartyPhysicalCity" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyPhysicalState" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="PartyPhysicalPostalCode" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mileage" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PartyPhoneVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneFax" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneMobile" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyWebsite" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DefaultImageFileName" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="PartyPhoneDisplayVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ProfileTemplateLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="FeatureStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
