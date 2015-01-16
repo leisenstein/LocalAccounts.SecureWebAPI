@@ -37,7 +37,8 @@
             $.ajax({
                 type: 'POST',
                 url: '/Token',
-                data: loginData
+                data: loginData,
+                async: false
             }).done(function (data) {
                 // self.user(data.userName);
                 // Cache the access token in session storage.

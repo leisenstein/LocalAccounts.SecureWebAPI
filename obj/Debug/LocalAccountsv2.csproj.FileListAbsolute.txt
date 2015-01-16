@@ -61,3 +61,46 @@ c:\users\larry\documents\visual studio 2013\Projects\LocalAccountsv2\LocalAccoun
 c:\users\larry\documents\visual studio 2013\Projects\LocalAccountsv2\LocalAccountsv2\obj\Debug\LocalAccountsv2.csprojResolveAssemblyReference.cache
 c:\users\larry\documents\visual studio 2013\Projects\LocalAccountsv2\LocalAccountsv2\obj\Debug\LocalAccountsv2.dll
 c:\users\larry\documents\visual studio 2013\Projects\LocalAccountsv2\LocalAccountsv2\obj\Debug\LocalAccountsv2.pdb
+C:\GitHub\LocalAccounts.SecureWebAPI\obj\Debug\LocalAccountsv2.csprojResolveAssemblyReference.cache
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\LocalAccountsv2.dll.config
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\LocalAccountsv2.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\LocalAccountsv2.pdb
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Antlr3.Runtime.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\EntityFramework.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\EntityFramework.SqlServer.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Web.Infrastructure.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Newtonsoft.Json.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Net.Http.Formatting.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Http.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Http.WebHost.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Mvc.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Antlr3.Runtime.pdb
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\EntityFramework.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\EntityFramework.SqlServer.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Newtonsoft.Json.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Web.Infrastructure.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Net.Http.Formatting.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Helpers.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Http.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Http.WebHost.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Mvc.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Optimization.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Razor.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.WebPages.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.WebPages.Deployment.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.WebPages.Razor.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.AspNet.Identity.Core.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.Security.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.Security.Facebook.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.Security.OAuth.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.Security.Google.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.Security.Twitter.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\bin\System.Web.Http.Owin.xml
+C:\GitHub\LocalAccounts.SecureWebAPI\obj\Debug\LocalAccountsv2.dll
+C:\GitHub\LocalAccounts.SecureWebAPI\obj\Debug\LocalAccountsv2.pdb
