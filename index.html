@@ -37,8 +37,11 @@
 
 
         var token = sessionStorage.getItem(tokenKey);
+        var expiration = sessionStorage.getItem(tokenExpires);
+        var currentDate = new Date();
+
         var headers = {};
-        if (token) {
+        if (token && expiration > currentDate) {
             headers.Authorization = 'Bearer ' + token;
         } else {
             $.ajax({
@@ -66,7 +69,7 @@
 
 
 
-        var uri = 'api/products';
+        var uri = 'api/Products/GetAllProducts';
         $(document).ready(function () {
 
             // $.ajax({});

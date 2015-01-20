@@ -117,7 +117,28 @@ ALTER TABLE [dbo].[AspNetUserLogins] CHECK CONSTRAINT [FK_dbo.AspNetUserLogins_d
 GO
 
 
-
-
-
 -- ================================================================================================
+
+
+-- INSERT SOME Roles if needed
+
+INSERT INTO [dbo].[AspNetRoles]
+           ([Id]
+           ,[Name])
+     VALUES
+           (1
+           ,'Administrators')
+
+INSERT INTO [dbo].[AspNetRoles]
+           ([Id]
+           ,[Name])
+     VALUES
+           (2
+           ,'Users')
+
+INSERT INTO [dbo].[AspNetRoles]
+           ([Id]
+           ,[Name])
+     VALUES
+           (3
+           ,'AF')
