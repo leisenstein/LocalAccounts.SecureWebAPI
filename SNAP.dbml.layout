@@ -74,83 +74,83 @@
         <elementListCompartment Id="956cf3d4-d097-4392-9fac-34c143b71ff0" absoluteBounds="2.8900000000000006, 8.585, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="e5c8b09f-82e3-4f04-9eed-680ed4e7f792" absoluteBounds="0.75, 0.75, 2, 1.0961531575520833">
+    <classShape Id="e5c8b09f-82e3-4f04-9eed-680ed4e7f792" absoluteBounds="9, 13.875, 2, 1.0961531575520833">
       <DataClassMoniker Name="/SNAPDataContext/SNAP_ServiceArea" />
       <nestedChildShapes>
-        <elementListCompartment Id="422ced19-d462-4506-b5fa-13f5c50850de" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="422ced19-d462-4506-b5fa-13f5c50850de" absoluteBounds="9.015, 14.335, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(16.875 : 9.20894490559896); (16.125 : 9.20894490559896)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(16.875 : 9.20894490559896); (16.125 : 9.20894490559896)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_ExternalPartyMembershipType/SNAP_ExternalPartyMembershipType_SNAP_ExternalPartyMembership" />
       <nodes>
         <classShapeMoniker Id="4b5bcdab-9c09-43af-a689-63797ab7e5c9" />
         <classShapeMoniker Id="bfa0b583-db7e-4913-a19b-6f2f881bddef" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.625 : 12.2206950151726); (5.94031461078967 : 12.2206950151726); (5.94031461078967 : 15.264107062573); (4.875 : 15.264107062573)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+    <associationConnector edgePoints="[(7.625 : 12.2206950151726); (5.94031461078967 : 12.2206950151726); (5.94031461078967 : 15.264107062573); (4.875 : 15.264107062573)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_Party/SNAP_Party_SNAP_Address" />
       <nodes>
         <classShapeMoniker Id="8c4b57e5-e34e-4c87-8ffd-58c25a8c87ec" />
         <classShapeMoniker Id="f7c6f72c-32a9-4350-a981-42ceea4ad901" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.625 : 11.1927412028386); (6.15359679026901 : 11.1927412028386); (6.15359679026901 : 5.38137158447493); (4.875 : 5.38137158447493)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+    <associationConnector edgePoints="[(7.625 : 11.1927412028386); (6.15359679026901 : 11.1927412028386); (6.15359679026901 : 5.38137158447493); (4.875 : 5.38137158447493)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_Party/SNAP_Party_SNAP_EmailAddress" />
       <nodes>
         <classShapeMoniker Id="8c4b57e5-e34e-4c87-8ffd-58c25a8c87ec" />
         <classShapeMoniker Id="3ab0421d-1e75-4399-b70c-4be677f52a47" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.875 : 11.6232922363281); (15.1192532626422 : 11.6232922363281); (15.1192532626422 : 10.1678898111979)]" manuallyRouted="true" fixedFrom="Algorithm" fixedTo="Caller">
+    <associationConnector edgePoints="[(12.875 : 11.6232922363281); (15.1192532626422 : 11.6232922363281); (15.1192532626422 : 10.1678898111979)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_Party/SNAP_Party_SNAP_ExternalPartyMembership" />
       <nodes>
         <classShapeMoniker Id="8c4b57e5-e34e-4c87-8ffd-58c25a8c87ec" />
         <classShapeMoniker Id="bfa0b583-db7e-4913-a19b-6f2f881bddef" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.625 : 11.9166932779706); (4.875 : 11.9166932779706)]" fixedFrom="Caller" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(7.625 : 11.9166932779706); (4.875 : 11.9166932779706)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_Party/SNAP_Party_SNAP_PhoneNumber" />
       <nodes>
         <classShapeMoniker Id="8c4b57e5-e34e-4c87-8ffd-58c25a8c87ec" />
         <classShapeMoniker Id="46cd1901-590f-45d3-bb2c-e6e156521ea3" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(10.625 : 10.5); (10.625 : 7.03593180338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(10.625 : 10.5); (10.625 : 7.03593180338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_Party/SNAP_Party_SNAP_Profile" />
       <nodes>
         <classShapeMoniker Id="8c4b57e5-e34e-4c87-8ffd-58c25a8c87ec" />
         <classShapeMoniker Id="01e82cd3-b02b-4e75-8de6-065324d71292" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.625 : 5.54459757486979); (9 : 5.54459757486979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.625 : 5.54459757486979); (9 : 5.54459757486979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_Profile/SNAP_Profile_SNAP_ProfileProperty" />
       <nodes>
         <classShapeMoniker Id="01e82cd3-b02b-4e75-8de6-065324d71292" />
         <classShapeMoniker Id="a42c9192-e272-4c85-bac3-f9a784f46891" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.375 : 5.54459757486979); (11.625 : 5.54459757486979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.375 : 5.54459757486979); (11.625 : 5.54459757486979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_ProfileTemplate/SNAP_ProfileTemplate_SNAP_Profile" />
       <nodes>
         <classShapeMoniker Id="b746b716-56fc-4a70-b62b-37da76779605" />
         <classShapeMoniker Id="01e82cd3-b02b-4e75-8de6-065324d71292" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.875 : 11.8978260606528); (15.1662665935731 : 11.8978260606528); (15.1662665935731 : 13.5)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+    <associationConnector edgePoints="[(12.875 : 11.8978260606528); (15.1662665935731 : 11.8978260606528); (15.1662665935731 : 13.5)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_Party/SNAP_Party_SNAP_RegionsServed" />
       <nodes>
         <classShapeMoniker Id="8c4b57e5-e34e-4c87-8ffd-58c25a8c87ec" />
         <classShapeMoniker Id="30d4f2f7-537c-4a43-a984-e2b5e9bde76f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(16.875 : 14.2124239095052); (16.25 : 14.2124239095052)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(16.875 : 14.2124239095052); (16.25 : 14.2124239095052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_RegionDefinition/SNAP_RegionDefinition_SNAP_RegionsServed" />
       <nodes>
         <classShapeMoniker Id="e0d22e8b-4e7b-4539-a8eb-49942caee55d" />
         <classShapeMoniker Id="30d4f2f7-537c-4a43-a984-e2b5e9bde76f" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.625 : 11.5268921792107); (5.93940785958246 : 11.5268921792107); (5.93940785958246 : 8.64381896001876); (4.875 : 8.64381896001876)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+    <associationConnector edgePoints="[(7.625 : 11.5268921792107); (5.93940785958246 : 11.5268921792107); (5.93940785958246 : 8.64381896001876); (4.875 : 8.64381896001876)]" manuallyRouted="true" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/SNAPDataContext/SNAP_Party/SNAP_Party_SNAP_Website" />
       <nodes>
         <classShapeMoniker Id="8c4b57e5-e34e-4c87-8ffd-58c25a8c87ec" />

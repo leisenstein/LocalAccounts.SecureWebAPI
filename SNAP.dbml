@@ -218,4 +218,96 @@
       <Column Name="FeatureStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SNAP_CL_GetPartyByProfileTypeAndLocation" Method="SNAP_CL_GetPartyByProfileTypeAndLocation">
+    <Parameter Name="vcProfileType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="vcLocation" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="intRange" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SNAP_CL_GetPartyByProfileTypeAndLocationResult">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PartyName" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="PartyPhysicalAddress" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PartyPhysicalCity" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyPhysicalState" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="PartyPhysicalPostalCode" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mileage" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PartyPhoneVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneFax" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneMobile" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyWebsite" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DefaultImageFileName" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="PartyPhoneDisplayVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ProfileTemplateLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="FeatureStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SNAP_CL_GetPartyByProfileTypeAndLocationAndName" Method="SNAP_CL_GetPartyByProfileTypeAndLocationAndName">
+    <Parameter Name="ProfileType" Parameter="profileType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Range" Parameter="range" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PartyProviderName" Parameter="partyProviderName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="SNAP_CL_GetPartyByProfileTypeAndLocationAndNameResult">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PartyName" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="PartyPhysicalAddress" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PartyPhysicalCity" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyPhysicalState" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="PartyPhysicalPostalCode" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mileage" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PartyPhoneVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneFax" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneMobile" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyWebsite" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DefaultImageFileName" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="PartyPhoneDisplayVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ProfileTemplateLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="FeatureStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SNAP_CL_GetPartyByProfileTypeAndProfilePropertyAndLocationAndName" Method="SNAP_CL_GetPartyByProfileTypeAndProfilePropertyAndLocationAndName">
+    <Parameter Name="vcProfileType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="vcProfileTypeProperty" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="vcLocation" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="intRange" Type="System.Int32" DbType="Int" />
+    <Parameter Name="vcPartyProviderName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="SNAP_CL_GetPartyByProfileTypeAndProfilePropertyAndLocationAndNameResult">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PartyName" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="PartyPhysicalAddress" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PartyPhysicalCity" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyPhysicalState" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="PartyPhysicalPostalCode" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mileage" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PartyPhoneVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneFax" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneMobile" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyWebsite" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DefaultImageFileName" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="PartyPhoneDisplayVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ProfileTemplateLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="FeatureStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SNAP_Party_Get" Method="SNAP_Party_Get">
+    <Parameter Name="PartyId" Parameter="partyId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SNAP_Party_GetResult">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PartyTypeLabel" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

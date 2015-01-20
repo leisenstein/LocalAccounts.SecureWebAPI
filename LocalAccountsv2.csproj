@@ -173,8 +173,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\PartyController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -212,6 +214,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Sql\0.1.1.sql" />
     <Content Include="Sql\0.1.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -228,6 +231,7 @@
       <LastGenOutput>SNAP.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Sql\0.1.0.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

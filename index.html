@@ -29,6 +29,13 @@
 
 
         var tokenKey = 'localAccountsv2_Auth';
+        var tokenType = tokenKey + '_token_type';
+        var tokenExpiresIn = tokenKey + '_expires_in';
+        var tokenUserName = tokenKey + '_userName';
+        var tokenIssued = tokenKey + '_issued';
+        var tokenExpires = tokenKey + '_expires';
+
+
         var token = sessionStorage.getItem(tokenKey);
         var headers = {};
         if (token) {
@@ -43,6 +50,11 @@
                 // self.user(data.userName);
                 // Cache the access token in session storage.
                 sessionStorage.setItem(tokenKey, data.access_token);
+                sessionStorage.setItem(tokenType, data.token_type);
+                sessionStorage.setItem(tokenExpiresIn, data.expires_in);
+                sessionStorage.setItem(tokenUserName, data.userName);
+                sessionStorage.setItem(tokenIssued, data[".issued"]);
+                sessionStorage.setItem(tokenExpires, data[".expires"]);
                 $('#product').text('Good Token: ' + data.access_token);
                 token = sessionStorage.getItem(tokenKey);
                 headers.Authorization = 'Bearer ' + token;
