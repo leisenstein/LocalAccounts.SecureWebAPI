@@ -331,3 +331,51 @@ GO
 
 
 
+
+
+
+
+CREATE PROCEDURE [dbo].[SNAP_CL_GetPartyInformation]
+ @partyId int
+
+AS
+
+BEGIN 
+
+    
+    SELECT 
+          -- p.[PartyId] ,
+           p.[Name] [PartyName]
+          ,p.[PartyTypeLabel] [PartyType]
+          -- ,pr.ProfileId
+          ,pr.ProfileTemplateLabel [ProfileTemplateName]
+          ,pp.PropertyName 
+          ,pp.PropertyValue
+    	  , a.Address [Address1]
+    	  , a.ApartmentOrSuite [Address2]
+    	  , a.City
+    	  , a.State [State]
+    	  , a.PostalCode [ZipCode]
+    	  , a.Latitude
+    	  , a.Longitude 
+    	  , w.URL [website]
+    	  , ph.PhoneNumber [Phone]
+    	  , pf.PhoneNumber [Fax]
+    	  , e.EmailAddress [Email]
+    	  , g.DefaultImageFileName [DefaultImageFileName]
+      FROM [SNAP_Party] p
+           LEFT JOIN SNAP_Profile pr ON pr.OwnerPartyId = p.PartyId
+           LEFT JOIN SNAP_ProfileProperty pp ON pp.ProfileId = pr.ProfileId
+    	   LEFT JOIN SNAP_Address a ON a.PartyId = p.PartyId AND a.Purpose = 'Physical Address' AND a.IsPreferred = 1
+    	   LEFT JOIN SNAP_Website w ON w.PartyId = p.PartyId AND w.IsPreferred = 1
+    	   LEFT JOIN SNAP_PhoneNumber ph ON ph.PartyId = p.PartyId AND ph.Purpose = 'Phone' AND ph.IsPreferred = 1
+    	   LEFT JOIN SNAP_PhoneNumber pf ON pf.PartyId = p.PartyId AND pf.Purpose = 'Fax' AND ph.IsPreferred = 1
+    	   LEFT JOIN SNAP_EmailAddress e ON p.PartyId = e.PartyId AND e.Purpose = 'general'	AND e.IsPreferred = 1
+    	   LEFT JOIN SNAP_PartyGallery g ON	p.PartyId = g.PartyId
+      WHERE 1=1 
+            AND p.PartyId = @partyId
+            AND [dbo].[SNAP_IsActive](p.EffectiveDate, p.UntilDate, GETDATE()) = 1
+    
+END
+
+
