@@ -5652,8 +5652,6 @@ namespace LocalAccountsv2
 		
 		private string _DefaultImageFileName;
 		
-		private string _Column1;
-		
 		private string _ServicesOffered;
 		
 		private string _RegionName;
@@ -5952,22 +5950,6 @@ namespace LocalAccountsv2
 				if ((this._DefaultImageFileName != value))
 				{
 					this._DefaultImageFileName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="VarChar(500)")]
-		public string Column1
-		{
-			get
-			{
-				return this._Column1;
-			}
-			set
-			{
-				if ((this._Column1 != value))
-				{
-					this._Column1 = value;
 				}
 			}
 		}

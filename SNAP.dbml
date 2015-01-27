@@ -331,7 +331,6 @@
       <Column Name="Fax" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="DefaultImageFileName" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
-      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="ServicesOffered" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="RegionName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="LicenseIssuer" Type="System.String" DbType="VarChar(448)" CanBeNull="true" />
