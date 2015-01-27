@@ -202,13 +202,6 @@ namespace LocalAccountsv2
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SNAP_GetPartyForProfile_UseDistanceRange")]
-		public ISingleResult<SNAP_GetPartyForProfile_UseDistanceRangeResult> SNAP_GetPartyForProfile_UseDistanceRange([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcProfileType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcProfileTypeProperty, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcDemographics, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> intRange, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcPartyProviderName)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), vcProfileType, vcProfileTypeProperty, vcDemographics, intRange, vcPartyProviderName);
-			return ((ISingleResult<SNAP_GetPartyForProfile_UseDistanceRangeResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SNAP_CL_GetPartyByProfileTypeAndLocation")]
 		public ISingleResult<SNAP_CL_GetPartyByProfileTypeAndLocationResult> SNAP_CL_GetPartyByProfileTypeAndLocation([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcProfileType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcLocation, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> intRange)
 		{
@@ -235,6 +228,13 @@ namespace LocalAccountsv2
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), partyId);
 			return ((ISingleResult<SNAP_Party_GetResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SNAP_CL_GetPartyForProfile_UseDistanceRange")]
+		public ISingleResult<SNAP_CL_GetPartyForProfile_UseDistanceRangeResult> SNAP_CL_GetPartyForProfile_UseDistanceRange([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcProfileType, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcProfileTypeProperty, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcDemographics, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> intRange, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(100)")] string vcPartyProviderName)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), vcProfileType, vcProfileTypeProperty, vcDemographics, intRange, vcPartyProviderName);
+			return ((ISingleResult<SNAP_CL_GetPartyForProfile_UseDistanceRangeResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SNAP_CL_GetPartyInformation")]
@@ -4115,338 +4115,6 @@ namespace LocalAccountsv2
 		}
 	}
 	
-	public partial class SNAP_GetPartyForProfile_UseDistanceRangeResult
-	{
-		
-		private int _PartyId;
-		
-		private string _PartyName;
-		
-		private string _PartyPhysicalAddress;
-		
-		private string _PartyPhysicalCity;
-		
-		private string _PartyPhysicalState;
-		
-		private string _PartyPhysicalPostalCode;
-		
-		private System.Nullable<double> _Latitude;
-		
-		private System.Nullable<double> _Longitude;
-		
-		private System.Nullable<double> _Mileage;
-		
-		private string _PartyPhoneVoice;
-		
-		private string _PartyPhoneFax;
-		
-		private string _PartyPhoneMobile;
-		
-		private string _PartyEmail;
-		
-		private string _PartyWebsite;
-		
-		private string _DefaultImageFileName;
-		
-		private string _PartyPhoneDisplayVoice;
-		
-		private string _ProfileTemplateLabel;
-		
-		private System.Nullable<System.DateTime> _FeatureStartDate;
-		
-		public SNAP_GetPartyForProfile_UseDistanceRangeResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyId", DbType="Int NOT NULL")]
-		public int PartyId
-		{
-			get
-			{
-				return this._PartyId;
-			}
-			set
-			{
-				if ((this._PartyId != value))
-				{
-					this._PartyId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyName", DbType="NVarChar(450) NOT NULL", CanBeNull=false)]
-		public string PartyName
-		{
-			get
-			{
-				return this._PartyName;
-			}
-			set
-			{
-				if ((this._PartyName != value))
-				{
-					this._PartyName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhysicalAddress", DbType="NVarChar(400)")]
-		public string PartyPhysicalAddress
-		{
-			get
-			{
-				return this._PartyPhysicalAddress;
-			}
-			set
-			{
-				if ((this._PartyPhysicalAddress != value))
-				{
-					this._PartyPhysicalAddress = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhysicalCity", DbType="NVarChar(200)")]
-		public string PartyPhysicalCity
-		{
-			get
-			{
-				return this._PartyPhysicalCity;
-			}
-			set
-			{
-				if ((this._PartyPhysicalCity != value))
-				{
-					this._PartyPhysicalCity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhysicalState", DbType="NVarChar(80)")]
-		public string PartyPhysicalState
-		{
-			get
-			{
-				return this._PartyPhysicalState;
-			}
-			set
-			{
-				if ((this._PartyPhysicalState != value))
-				{
-					this._PartyPhysicalState = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhysicalPostalCode", DbType="NVarChar(40)")]
-		public string PartyPhysicalPostalCode
-		{
-			get
-			{
-				return this._PartyPhysicalPostalCode;
-			}
-			set
-			{
-				if ((this._PartyPhysicalPostalCode != value))
-				{
-					this._PartyPhysicalPostalCode = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="Float")]
-		public System.Nullable<double> Latitude
-		{
-			get
-			{
-				return this._Latitude;
-			}
-			set
-			{
-				if ((this._Latitude != value))
-				{
-					this._Latitude = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Float")]
-		public System.Nullable<double> Longitude
-		{
-			get
-			{
-				return this._Longitude;
-			}
-			set
-			{
-				if ((this._Longitude != value))
-				{
-					this._Longitude = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mileage", DbType="Float")]
-		public System.Nullable<double> Mileage
-		{
-			get
-			{
-				return this._Mileage;
-			}
-			set
-			{
-				if ((this._Mileage != value))
-				{
-					this._Mileage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhoneVoice", DbType="Char(10)")]
-		public string PartyPhoneVoice
-		{
-			get
-			{
-				return this._PartyPhoneVoice;
-			}
-			set
-			{
-				if ((this._PartyPhoneVoice != value))
-				{
-					this._PartyPhoneVoice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhoneFax", DbType="Char(10)")]
-		public string PartyPhoneFax
-		{
-			get
-			{
-				return this._PartyPhoneFax;
-			}
-			set
-			{
-				if ((this._PartyPhoneFax != value))
-				{
-					this._PartyPhoneFax = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhoneMobile", DbType="Char(10)")]
-		public string PartyPhoneMobile
-		{
-			get
-			{
-				return this._PartyPhoneMobile;
-			}
-			set
-			{
-				if ((this._PartyPhoneMobile != value))
-				{
-					this._PartyPhoneMobile = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyEmail", DbType="NVarChar(200)")]
-		public string PartyEmail
-		{
-			get
-			{
-				return this._PartyEmail;
-			}
-			set
-			{
-				if ((this._PartyEmail != value))
-				{
-					this._PartyEmail = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyWebsite", DbType="NVarChar(500)")]
-		public string PartyWebsite
-		{
-			get
-			{
-				return this._PartyWebsite;
-			}
-			set
-			{
-				if ((this._PartyWebsite != value))
-				{
-					this._PartyWebsite = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultImageFileName", DbType="VarChar(512)")]
-		public string DefaultImageFileName
-		{
-			get
-			{
-				return this._DefaultImageFileName;
-			}
-			set
-			{
-				if ((this._DefaultImageFileName != value))
-				{
-					this._DefaultImageFileName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhoneDisplayVoice", DbType="Char(10)")]
-		public string PartyPhoneDisplayVoice
-		{
-			get
-			{
-				return this._PartyPhoneDisplayVoice;
-			}
-			set
-			{
-				if ((this._PartyPhoneDisplayVoice != value))
-				{
-					this._PartyPhoneDisplayVoice = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfileTemplateLabel", DbType="NVarChar(40) NOT NULL", CanBeNull=false)]
-		public string ProfileTemplateLabel
-		{
-			get
-			{
-				return this._ProfileTemplateLabel;
-			}
-			set
-			{
-				if ((this._ProfileTemplateLabel != value))
-				{
-					this._ProfileTemplateLabel = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FeatureStartDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FeatureStartDate
-		{
-			get
-			{
-				return this._FeatureStartDate;
-			}
-			set
-			{
-				if ((this._FeatureStartDate != value))
-				{
-					this._FeatureStartDate = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SNAP_CL_GetPartyByProfileTypeAndLocationResult
 	{
 		
@@ -5613,8 +5281,342 @@ namespace LocalAccountsv2
 		}
 	}
 	
+	public partial class SNAP_CL_GetPartyForProfile_UseDistanceRangeResult
+	{
+		
+		private int _PartyId;
+		
+		private string _PartyName;
+		
+		private string _PartyPhysicalAddress;
+		
+		private string _PartyPhysicalCity;
+		
+		private string _PartyPhysicalState;
+		
+		private string _PartyPhysicalPostalCode;
+		
+		private System.Nullable<double> _Latitude;
+		
+		private System.Nullable<double> _Longitude;
+		
+		private System.Nullable<double> _Mileage;
+		
+		private string _PartyPhoneVoice;
+		
+		private string _PartyPhoneFax;
+		
+		private string _PartyPhoneMobile;
+		
+		private string _PartyEmail;
+		
+		private string _PartyWebsite;
+		
+		private string _DefaultImageFileName;
+		
+		private string _PartyPhoneDisplayVoice;
+		
+		private string _ProfileTemplateLabel;
+		
+		private System.Nullable<System.DateTime> _FeatureStartDate;
+		
+		public SNAP_CL_GetPartyForProfile_UseDistanceRangeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyId", DbType="Int NOT NULL")]
+		public int PartyId
+		{
+			get
+			{
+				return this._PartyId;
+			}
+			set
+			{
+				if ((this._PartyId != value))
+				{
+					this._PartyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyName", DbType="NVarChar(450) NOT NULL", CanBeNull=false)]
+		public string PartyName
+		{
+			get
+			{
+				return this._PartyName;
+			}
+			set
+			{
+				if ((this._PartyName != value))
+				{
+					this._PartyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhysicalAddress", DbType="NVarChar(400)")]
+		public string PartyPhysicalAddress
+		{
+			get
+			{
+				return this._PartyPhysicalAddress;
+			}
+			set
+			{
+				if ((this._PartyPhysicalAddress != value))
+				{
+					this._PartyPhysicalAddress = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhysicalCity", DbType="NVarChar(200)")]
+		public string PartyPhysicalCity
+		{
+			get
+			{
+				return this._PartyPhysicalCity;
+			}
+			set
+			{
+				if ((this._PartyPhysicalCity != value))
+				{
+					this._PartyPhysicalCity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhysicalState", DbType="NVarChar(80)")]
+		public string PartyPhysicalState
+		{
+			get
+			{
+				return this._PartyPhysicalState;
+			}
+			set
+			{
+				if ((this._PartyPhysicalState != value))
+				{
+					this._PartyPhysicalState = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhysicalPostalCode", DbType="NVarChar(40)")]
+		public string PartyPhysicalPostalCode
+		{
+			get
+			{
+				return this._PartyPhysicalPostalCode;
+			}
+			set
+			{
+				if ((this._PartyPhysicalPostalCode != value))
+				{
+					this._PartyPhysicalPostalCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Latitude", DbType="Float")]
+		public System.Nullable<double> Latitude
+		{
+			get
+			{
+				return this._Latitude;
+			}
+			set
+			{
+				if ((this._Latitude != value))
+				{
+					this._Latitude = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Float")]
+		public System.Nullable<double> Longitude
+		{
+			get
+			{
+				return this._Longitude;
+			}
+			set
+			{
+				if ((this._Longitude != value))
+				{
+					this._Longitude = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mileage", DbType="Float")]
+		public System.Nullable<double> Mileage
+		{
+			get
+			{
+				return this._Mileage;
+			}
+			set
+			{
+				if ((this._Mileage != value))
+				{
+					this._Mileage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhoneVoice", DbType="Char(10)")]
+		public string PartyPhoneVoice
+		{
+			get
+			{
+				return this._PartyPhoneVoice;
+			}
+			set
+			{
+				if ((this._PartyPhoneVoice != value))
+				{
+					this._PartyPhoneVoice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhoneFax", DbType="Char(10)")]
+		public string PartyPhoneFax
+		{
+			get
+			{
+				return this._PartyPhoneFax;
+			}
+			set
+			{
+				if ((this._PartyPhoneFax != value))
+				{
+					this._PartyPhoneFax = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhoneMobile", DbType="Char(10)")]
+		public string PartyPhoneMobile
+		{
+			get
+			{
+				return this._PartyPhoneMobile;
+			}
+			set
+			{
+				if ((this._PartyPhoneMobile != value))
+				{
+					this._PartyPhoneMobile = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyEmail", DbType="NVarChar(200)")]
+		public string PartyEmail
+		{
+			get
+			{
+				return this._PartyEmail;
+			}
+			set
+			{
+				if ((this._PartyEmail != value))
+				{
+					this._PartyEmail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyWebsite", DbType="NVarChar(500)")]
+		public string PartyWebsite
+		{
+			get
+			{
+				return this._PartyWebsite;
+			}
+			set
+			{
+				if ((this._PartyWebsite != value))
+				{
+					this._PartyWebsite = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DefaultImageFileName", DbType="VarChar(512)")]
+		public string DefaultImageFileName
+		{
+			get
+			{
+				return this._DefaultImageFileName;
+			}
+			set
+			{
+				if ((this._DefaultImageFileName != value))
+				{
+					this._DefaultImageFileName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyPhoneDisplayVoice", DbType="Char(10)")]
+		public string PartyPhoneDisplayVoice
+		{
+			get
+			{
+				return this._PartyPhoneDisplayVoice;
+			}
+			set
+			{
+				if ((this._PartyPhoneDisplayVoice != value))
+				{
+					this._PartyPhoneDisplayVoice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfileTemplateLabel", DbType="NVarChar(40) NOT NULL", CanBeNull=false)]
+		public string ProfileTemplateLabel
+		{
+			get
+			{
+				return this._ProfileTemplateLabel;
+			}
+			set
+			{
+				if ((this._ProfileTemplateLabel != value))
+				{
+					this._ProfileTemplateLabel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FeatureStartDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FeatureStartDate
+		{
+			get
+			{
+				return this._FeatureStartDate;
+			}
+			set
+			{
+				if ((this._FeatureStartDate != value))
+				{
+					this._FeatureStartDate = value;
+				}
+			}
+		}
+	}
+	
 	public partial class SNAP_CL_GetPartyInformationResult
 	{
+		
+		private int _PartyId;
 		
 		private string _PartyName;
 		
@@ -5650,8 +5652,36 @@ namespace LocalAccountsv2
 		
 		private string _DefaultImageFileName;
 		
+		private string _Column1;
+		
+		private string _ServicesOffered;
+		
+		private string _RegionName;
+		
+		private string _LicenseIssuer;
+		
+		private string _LicenseType;
+		
+		private string _LicenseId;
+		
 		public SNAP_CL_GetPartyInformationResult()
 		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyId", DbType="Int NOT NULL")]
+		public int PartyId
+		{
+			get
+			{
+				return this._PartyId;
+			}
+			set
+			{
+				if ((this._PartyId != value))
+				{
+					this._PartyId = value;
+				}
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PartyName", DbType="NVarChar(450) NOT NULL", CanBeNull=false)]
@@ -5922,6 +5952,102 @@ namespace LocalAccountsv2
 				if ((this._DefaultImageFileName != value))
 				{
 					this._DefaultImageFileName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="VarChar(500)")]
+		public string Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ServicesOffered", DbType="VarChar(500)")]
+		public string ServicesOffered
+		{
+			get
+			{
+				return this._ServicesOffered;
+			}
+			set
+			{
+				if ((this._ServicesOffered != value))
+				{
+					this._ServicesOffered = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegionName", DbType="NVarChar(MAX)")]
+		public string RegionName
+		{
+			get
+			{
+				return this._RegionName;
+			}
+			set
+			{
+				if ((this._RegionName != value))
+				{
+					this._RegionName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LicenseIssuer", DbType="VarChar(448)")]
+		public string LicenseIssuer
+		{
+			get
+			{
+				return this._LicenseIssuer;
+			}
+			set
+			{
+				if ((this._LicenseIssuer != value))
+				{
+					this._LicenseIssuer = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LicenseType", DbType="VarChar(40)")]
+		public string LicenseType
+		{
+			get
+			{
+				return this._LicenseType;
+			}
+			set
+			{
+				if ((this._LicenseType != value))
+				{
+					this._LicenseType = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LicenseId", DbType="NVarChar(40)")]
+		public string LicenseId
+		{
+			get
+			{
+				return this._LicenseId;
+			}
+			set
+			{
+				if ((this._LicenseId != value))
+				{
+					this._LicenseId = value;
 				}
 			}
 		}

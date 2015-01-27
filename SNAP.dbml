@@ -191,33 +191,6 @@
       <Column Name="PostalCode" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
     </Type>
   </Table>
-  <Function Name="dbo.SNAP_GetPartyForProfile_UseDistanceRange" Method="SNAP_GetPartyForProfile_UseDistanceRange">
-    <Parameter Name="vcProfileType" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="vcProfileTypeProperty" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="vcDemographics" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="intRange" Type="System.Int32" DbType="Int" />
-    <Parameter Name="vcPartyProviderName" Type="System.String" DbType="VarChar(100)" />
-    <ElementType Name="SNAP_GetPartyForProfile_UseDistanceRangeResult">
-      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PartyName" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
-      <Column Name="PartyPhysicalAddress" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
-      <Column Name="PartyPhysicalCity" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="PartyPhysicalState" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
-      <Column Name="PartyPhysicalPostalCode" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
-      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="Mileage" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Column Name="PartyPhoneVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="PartyPhoneFax" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="PartyPhoneMobile" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="PartyEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Column Name="PartyWebsite" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Column Name="DefaultImageFileName" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
-      <Column Name="PartyPhoneDisplayVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="ProfileTemplateLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
-      <Column Name="FeatureStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SNAP_CL_GetPartyByProfileTypeAndLocation" Method="SNAP_CL_GetPartyByProfileTypeAndLocation">
     <Parameter Name="vcProfileType" Type="System.String" DbType="VarChar(100)" />
     <Parameter Name="vcLocation" Type="System.String" DbType="VarChar(100)" />
@@ -310,9 +283,37 @@
       <Column Name="UntilDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SNAP_CL_GetPartyForProfile_UseDistanceRange" Method="SNAP_CL_GetPartyForProfile_UseDistanceRange">
+    <Parameter Name="vcProfileType" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="vcProfileTypeProperty" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="vcDemographics" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="intRange" Type="System.Int32" DbType="Int" />
+    <Parameter Name="vcPartyProviderName" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="SNAP_CL_GetPartyForProfile_UseDistanceRangeResult">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PartyName" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
+      <Column Name="PartyPhysicalAddress" Type="System.String" DbType="NVarChar(400)" CanBeNull="true" />
+      <Column Name="PartyPhysicalCity" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyPhysicalState" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="PartyPhysicalPostalCode" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Mileage" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PartyPhoneVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneFax" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyPhoneMobile" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PartyEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PartyWebsite" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="DefaultImageFileName" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="PartyPhoneDisplayVoice" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="ProfileTemplateLabel" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="FeatureStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.SNAP_CL_GetPartyInformation" Method="SNAP_CL_GetPartyInformation">
     <Parameter Name="partyId" Type="System.Int32" DbType="Int" />
     <ElementType Name="SNAP_CL_GetPartyInformationResult">
+      <Column Name="PartyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="PartyName" Type="System.String" DbType="NVarChar(450) NOT NULL" CanBeNull="false" />
       <Column Name="PartyType" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
       <Column Name="ProfileTemplateName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
@@ -330,6 +331,12 @@
       <Column Name="Fax" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="DefaultImageFileName" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ServicesOffered" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="RegionName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LicenseIssuer" Type="System.String" DbType="VarChar(448)" CanBeNull="true" />
+      <Column Name="LicenseType" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="LicenseId" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

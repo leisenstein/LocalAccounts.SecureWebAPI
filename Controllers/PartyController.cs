@@ -37,9 +37,12 @@ namespace LocalAccountsv2.Controllers
             
             var firstRow = localPartyDbRows.FirstOrDefault();
             PartyInformation objPartyInfo = new PartyInformation();
+            Dictionary<int, LicenseInformation> licenseDictionary = new Dictionary<int, LicenseInformation>();
+
 
             if (firstRow != null)
             {
+                objPartyInfo.PartyId = firstRow.PartyId;
                 objPartyInfo.PartyName = firstRow.PartyName;
                 objPartyInfo.PartyType = firstRow.PartyType;
                 objPartyInfo.Address1 = firstRow.Address1;
@@ -54,6 +57,7 @@ namespace LocalAccountsv2.Controllers
                 objPartyInfo.Fax = firstRow.Fax;
                 objPartyInfo.Email = firstRow.Email;
                 objPartyInfo.DefaultImageFileName = firstRow.DefaultImageFileName;
+                objPartyInfo.ServicesOffered = firstRow.ServicesOffered;
 
 
                 var distinctTemplateNames = localPartyDbRows.Select(x => x.ProfileTemplateName).Distinct();
@@ -76,6 +80,27 @@ namespace LocalAccountsv2.Controllers
                     // Add the <string, List>
                     objPartyInfo.ProfileProperties.Add(dtName.ToString(), tempPropList);
                 }
+
+                // Add Licenses
+                var i = 1;
+                var licenses = localPartyDbRows.GroupBy(l => l.LicenseType).Select(q => q.FirstOrDefault()).Distinct();
+                foreach (var l in licenses)
+                {
+                    licenseDictionary.Add(i, new LicenseInformation(l.LicenseIssuer, l.LicenseType, l.LicenseId));
+                    ++i;
+                }
+                objPartyInfo.Licenses = licenseDictionary;
+
+
+                // Add Regions
+                var regions = localPartyDbRows.GroupBy(r => r.RegionName).Select(v => v.FirstOrDefault()).Distinct();
+                foreach (var m in regions)
+                {
+                    objPartyInfo.Regions.Add(m.RegionName);
+                }
+
+
+
             }
             //else
             //{
@@ -86,9 +111,28 @@ namespace LocalAccountsv2.Controllers
         }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //  The method below belongs in SearchController
+        //  Here for testing
+
         [HttpGet]
         [Authorize]
-        public IEnumerable<SNAP_GetPartyForProfile_UseDistanceRangeResult> GetUseDistanceRange(string profile, string property, string location, int range, string providername)
+        public IEnumerable<SNAP_CL_GetPartyForProfile_UseDistanceRangeResult> GetUseDistanceRange(string profile, string property, string location, int range, string providername)
         {
             // http://localhost:8080/api/Search/GetUseDistanceRange?profile=medical-equipment&property=&location=30328&range=10&providername=
             SNAPDataContext db = new SNAPDataContext();
@@ -97,7 +141,7 @@ namespace LocalAccountsv2.Controllers
             if (providername == null)
                 providername = "";
 
-            var t = db.SNAP_GetPartyForProfile_UseDistanceRange(profile, property, location, range, providername);
+            var t = db.SNAP_CL_GetPartyForProfile_UseDistanceRange(profile, property, location, range, providername);
             return t;
         }
 
@@ -105,7 +149,7 @@ namespace LocalAccountsv2.Controllers
 
         [HttpGet]
         [Authorize(Roles="AF")]
-        public IEnumerable<SNAP_GetPartyForProfile_UseDistanceRangeResult> GetUseDistanceRangeAF(string profile, string property, string location, int range, string providername)
+        public IEnumerable<SNAP_CL_GetPartyForProfile_UseDistanceRangeResult> GetUseDistanceRangeAF(string profile, string property, string location, int range, string providername)
         {
             location = "60601";  // change to show different results for testing.
             // http://localhost:8080/api/Search/GetUseDistanceRange?profile=medical-equipment&property=&location=30328&range=10&providername=
@@ -115,7 +159,7 @@ namespace LocalAccountsv2.Controllers
             if (providername == null)
                 providername = "";
 
-            var t = db.SNAP_GetPartyForProfile_UseDistanceRange(profile, property, location, range, providername);
+            var t = db.SNAP_CL_GetPartyForProfile_UseDistanceRange(profile, property, location, range, providername);
             return t;
         }
 
